@@ -1,0 +1,713 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Liquor</title>
+<meta name="generator" content="WYSIWYG Web Builder 20 - http://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&display=swap" rel="stylesheet">
+<link href="css/liquor.css" rel="stylesheet">
+<link href="css/INDEX.css" rel="stylesheet">
+<script src="jquery-3.7.1.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="searchindex.js"></script>
+<script src="wb.sitesearch.min.js"></script>
+<script>
+var features = 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,status=no,left=,top=,width=,height=';
+function searchPage(features)
+{
+   var element = document.getElementById('SiteSearch1');
+   window.open('sitesearch1-results.html?q='+encodeURIComponent(element.value), '', features);
+   return false;
+}
+</script>
+<script src="wwb20.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(event)
+{
+   var product1Dialog = document.querySelector('#product1Dialog');
+   var bsproduct1Dialog = new bootstrap.Modal(product1Dialog);
+   product1Dialog.addEventListener('show.bs.modal', function(e)
+   {
+      var dlg = document.querySelector('#product1Dialog .modal-dialog');
+      dlg.classList.remove('animate-hide');
+      dlg.classList.add('animate-show');
+   });
+   product1Dialog.addEventListener('hide.bs.modal', function(e)
+   {
+      var dlg = document.querySelector('#product1Dialog .modal-dialog');
+      dlg.classList.remove('animate-show');
+      var forceReflow = e.target.offsetWidth;
+      dlg.classList.add('animate-hide');
+   });
+   $('#product1Dialog .modal-dialog').draggable({handle: '.modal-header'});
+   var buttons = document.querySelectorAll('#wb_quantity button');
+   buttons.forEach(function(button)
+   {
+      button.addEventListener('click', function()
+      {
+         var input = document.getElementById('quantity');
+         var oldVal = input.value.trim();
+         var newVal = 0;
+         if (this.getAttribute('data-dir') == 'up')
+         {
+            if (oldVal < 10)
+            {
+               newVal = parseFloat(oldVal) + 1;
+            }
+            else
+            {
+               newVal = 10;
+            }
+         }
+         else
+         {
+            if (oldVal > 1)
+            {
+               newVal = parseFloat(oldVal) - 1;
+            }
+            else
+            {
+               newVal = 1;
+            }
+         }
+         input.value = newVal;
+         var changeEvent = new Event('change');
+         input.dispatchEvent(changeEvent);
+      });
+   });
+});
+</script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#headerLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_headerLayoutGrid').offset().top }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#navigationLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_navigationLayoutGrid').offset().top }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#trendingLayoutGrid1']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_trendingLayoutGrid1').offset().top-57 }, 600, 'easeOutSine');
+   });
+   $("a[href*='#trendingLayoutGrid2']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_trendingLayoutGrid2').offset().top-57 }, 600, 'easeOutSine');
+   });
+   $("a[href*='#categoriesLayoutGrid1']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_categoriesLayoutGrid1').offset().top-57 }, 600, 'easeOutSine');
+   });
+   paypal.minicart.render({
+   styles: '@keyframes pop-in {    0% { opacity: 0; transform: scale(0.1); }    60% { opacity: 1; transform: scale(1.2); }    100% { transform: scale(1); }}@-webkit-keyframes pop-in {    0% { opacity: 0; -webkit-transform: scale(0.1); }    60% { opacity: 1; -webkit-transform: scale(1.2); }    100% { -webkit-transform: scale(1); }}@-moz-keyframes pop-in {    0% { opacity: 0; -moz-transform: scale(0.1); }    60% { opacity: 1; -moz-transform: scale(1.2); }    100% { -moz-transform: scale(1); }}.minicart-showing #PPMiniCart {    display: block;    transform: translateZ(0);    -webkit-transform: translateZ(0);    -moz-transform: translateZ(0);    animation: pop-in 0.25s;    -webkit-animation: pop-in 0.25s;    -moz-animation: pop-in 0.25s;}#PPMiniCart {    display: none;    position: fixed;    left: 50%;    top: 75px;}#PPMiniCart form {    position: relative;    width: 600px;    max-height: 400px;    margin-left: -300px;    padding: 10px 10px 40px;    background: #fbfbfb;    border: 1px solid #d7d7d7;    border-radius: 4px;    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);    font: 15px/normal arial, helvetica;    color: #333;}#PPMiniCart form.minicart-empty {    padding-bottom: 10px;    font-size: 16px;    font-weight: bold;}#PPMiniCart ul {    clear: both;    box-sizing: border-box;   float: left;    width: 100%;    margin: 5px 0 20px;    padding: 10px;    list-style-type: none;    background: transparent;    border: 0px solid #ccc; }#PPMiniCart .minicart-empty ul {    display: none;}#PPMiniCart .minicart-closer {    float: right;    margin: -12px -10px 0;    padding: 10px;    background: 0;    border: 0;    font-size: 18px;    cursor: pointer;    font-weight: bold;}#PPMiniCart .minicart-item {    clear: left;    padding: 6px 0;    min-height: 25px;}#PPMiniCart .minicart-item + .minicart-item {    border-top: 1px solid #f2f2f2;}#PPMiniCart .minicart-item a {    color: #333;    text-decoration: none;}#PPMiniCart .minicart-details-name {    float: left;    width: 62%;}#PPMiniCart .minicart-details-quantity {    float: left;    width: 15%;}#PPMiniCart .minicart-details-remove {    float: left;    width: 7%;}#PPMiniCart .minicart-details-price {    float: left;    width: 16%;    text-align: right;}#PPMiniCart .minicart-attributes {    margin: 0;    padding: 0;    background: transparent;    border: 0;    border-radius: 0;    box-shadow: none;    color: #999;    font-size: 12px;    line-height: 22px;}#PPMiniCart .minicart-attributes li {    display: inline;}#PPMiniCart .minicart-attributes li:after {    content: ",";}#PPMiniCart .minicart-attributes li:last-child:after {    content: "";}#PPMiniCart .minicart-quantity {    width: 30px;    height: 18px;    padding: 2px 4px;    border: 1px solid #ccc;    border-radius: 4px;    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);    font-size: 13px;    text-align: right;    transition: border linear 0.2s, box-shadow linear 0.2s;    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;}#PPMiniCart .minicart-quantity:hover {    border-color: #0078C1;}#PPMiniCart .minicart-quantity:focus {    border-color: #0078C1;    outline: 0;    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(0, 120, 193, 0.4);}#PPMiniCart .minicart-remove {    width: 18px;    height: 19px;    margin: 2px 0 0;    padding: 0;    background: #b7b7b7;    border: 1px solid #a3a3a3;    border-radius: 3px;    color: #fff;    font-size: 13px;    opacity: 0.70;    cursor: pointer;}#PPMiniCart .minicart-remove:hover {    opacity: 1;}#PPMiniCart .minicart-footer {    clear: left;}#PPMiniCart .minicart-subtotal {    position: absolute;    bottom: 17px;    padding-left: 6px;    left: 10px;    font-size: 16px;    font-weight: bold;}#PPMiniCart .minicart-submit {    position: absolute;    bottom: 10px;    right: 10px;    min-width: 100px;    height: auto;    margin-right: 6px;    padding: 10px 16px;    text-align: left;   border: 1px solid #ffc727;    border-radius: 5px;    color: #000;    cursor: pointer;    background: #ffaa00;} #PPMiniCart .minicart-logo { display: block; vertical-align: bottom; width: 65px; height: 21px; }#PPMiniCart form {    font-family: Arial;   font-size: 13px;   text-align: left;   border-color: rgba(34,34,34,0.16);   border-radius: 0px;   background-color: #FBFBFB;   color: #222222;   box-shadow: 2px 2px 10px rgba(0,0,0,0.50);}#PPMiniCart .minicart-submit { background: #FFC439;   border: 1px solid #FFC439;   border-radius: 0px;   font-size: 0.9em;   color: #000000;}#PPMiniCart .minicart-item a{   color: #222222;}#PPMiniCart .minicart-item + .minicart-item{   border-top: 1px solid rgba(34,34,34,0.08);}#PPMiniCart .minicart-attributes{   font-size: 0.75em;   color: #222222;   opacity: 0.60;}#PPMiniCart .minicart-remove{   border-radius: 50%;}#PPMiniCart .minicart-closer{   color: #222222;}#PPMiniCart .minicart-subtotal{   font-size: 1.0em;}#PPMiniCart .minicart-quantity, #PPMiniCart .minicart-quantity:hover{   border: 1px solid rgba(34,34,34,0.27);   font-size: 1.0em;   color: #222222;}',
+   template: '<%var items = cart.items();var settings = cart.settings();var hasItems = !!items.length;var priceFormat = { format: true, currency: cart.settings("currency_code") };var totalFormat = { format: true, showCode: true };%><form method="post" class="<% if (!hasItems) { %>minicart-empty<% } %>" action="<%= config.action %>" target="<%= config.target %>">    <% if (hasItems) { %><span class="minicart-header"><%= config.strings.header %></span><% } %><button type="button" class="minicart-closer">&times;</button>    <ul>        <% for (var i= 0, idx = i + 1, len = items.length; i < len; i++, idx++) { %>        <li class="minicart-item">            <div class="minicart-details-name">                <a class="minicart-name" href="<%= items[i].get("href") %>"><%= items[i].get("item_name") %></a>                <ul class="minicart-attributes">                    <% if (items[i].get("item_number")) { %>                    <li>                        <%= items[i].get("item_number") %>                        <input type="hidden" name="item_number_<%= idx %>" value="<%= items[i].get("item_number") %>" />                    </li>                    <% } %>                    <% if (items[i].discount()) { %>                    <li>                        <%= config.strings.discount %> <%= items[i].discount(priceFormat) %>                        <input type="hidden" name="discount_amount_<%= idx %>" value="<%= items[i].discount() %>" />                    </li>                    <% } %>                    <% for (var options = items[i].options(), j = 0, len2 = options.length; j < len2; j++) { %>                        <li>                            <%= options[j].key %>: <%= options[j].value %>                            <input type="hidden" name="on<%= j %>_<%= idx %>" value="<%= options[j].key %>" />                            <input type="hidden" name="os<%= j %>_<%= idx %>" value="<%= options[j].value %>" />                        </li>                    <% } %>                </ul>            </div>            <div class="minicart-details-quantity">                <input class="minicart-quantity" data-minicart-idx="<%= i %>" name="quantity_<%= idx %>" type="text" pattern="[0-9]*" value="<%= items[i].get("quantity") %>" autocomplete="off" />            </div>            <div class="minicart-details-remove">                <button type="button" class="minicart-remove" data-minicart-idx="<%= i %>">&times;</button>            </div>            <div class="minicart-details-price">                <span class="minicart-price"><%= items[i].total(priceFormat) %></span>            </div>            <input type="hidden" name="item_name_<%= idx %>" value="<%= items[i].get("item_name") %>" />            <input type="hidden" name="amount_<%= idx %>" value="<%= items[i].amount() %>" />            <input type="hidden" name="shipping_<%= idx %>" value="<%= items[i].get("shipping") %>" />            <input type="hidden" name="shipping2_<%= idx %>" value="<%= items[i].get("shipping2") %>" />        </li>        <% } %>    </ul>    <div class="minicart-footer">        <% if (hasItems) { %>            <div class="minicart-terms"> <input type="checkbox" id="minicart-terms-checkbox" name="terms"><%= config.strings.terms %></div> <div class="minicart-subtotal">                <%= config.strings.subtotal %> <%= cart.total(totalFormat) %>            </div>            <button class="minicart-submit" type="submit" data-minicart-alt="<%= config.strings.buttonAlt %>"><%- config.strings.button %><svg class="minicart-logo" width="100" height="32" viewBox="0 0 100 32" xmlns="http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg" preserveAspectRatio="xMinYMin meet"><path fill="#003087" d="M 12 4.917 L 4.2 4.917 C 3.7 4.917 3.2 5.317 3.1 5.817 L 0 25.817 C -0.1 26.217 0.2 26.517 0.6 26.517 L 4.3 26.517 C 4.8 26.517 5.3 26.117 5.4 25.617 L 6.2 20.217 C 6.3 19.717 6.7 19.317 7.3 19.317 L 9.8 19.317 C 14.9 19.317 17.9 16.817 18.7 11.917 C 19 9.817 18.7 8.117 17.7 6.917 C 16.6 5.617 14.6 4.917 12 4.917 Z M 12.9 12.217 C 12.5 15.017 10.3 15.017 8.3 15.017 L 7.1 15.017 L 7.9 9.817 C 7.9 9.517 8.2 9.317 8.5 9.317 L 9 9.317 C 10.4 9.317 11.7 9.317 12.4 10.117 C 12.9 10.517 13.1 11.217 12.9 12.217 Z"></path><path fill="#003087" d="M 35.2 12.117 L 31.5 12.117 C 31.2 12.117 30.9 12.317 30.9 12.617 L 30.7 13.617 L 30.4 13.217 C 29.6 12.017 27.8 11.617 26 11.617 C 21.9 11.617 18.4 14.717 17.7 19.117 C 17.3 21.317 17.8 23.417 19.1 24.817 C 20.2 26.117 21.9 26.717 23.8 26.717 C 27.1 26.717 29 24.617 29 24.617 L 28.8 25.617 C 28.7 26.017 29 26.417 29.4 26.417 L 32.8 26.417 C 33.3 26.417 33.8 26.017 33.9 25.517 L 35.9 12.717 C 36 12.517 35.6 12.117 35.2 12.117 Z M 30.1 19.317 C 29.7 21.417 28.1 22.917 25.9 22.917 C 24.8 22.917 24 22.617 23.4 21.917 C 22.8 21.217 22.6 20.317 22.8 19.317 C 23.1 17.217 24.9 15.717 27 15.717 C 28.1 15.717 28.9 16.117 29.5 16.717 C 30 17.417 30.2 18.317 30.1 19.317 Z"></path><path fill="#003087" d="M 55.1 12.117 L 51.4 12.117 C 51 12.117 50.7 12.317 50.5 12.617 L 45.3 20.217 L 43.1 12.917 C 43 12.417 42.5 12.117 42.1 12.117 L 38.4 12.117 C 38 12.117 37.6 12.517 37.8 13.017 L 41.9 25.117 L 38 30.517 C 37.7 30.917 38 31.517 38.5 31.517 L 42.2 31.517 C 42.6 31.517 42.9 31.317 43.1 31.017 L 55.6 13.017 C 55.9 12.717 55.6 12.117 55.1 12.117 Z"></path><path fill="#009cde" d="M 67.5 4.917 L 59.7 4.917 C 59.2 4.917 58.7 5.317 58.6 5.817 L 55.5 25.717 C 55.4 26.117 55.7 26.417 56.1 26.417 L 60.1 26.417 C 60.5 26.417 60.8 26.117 60.8 25.817 L 61.7 20.117 C 61.8 19.617 62.2 19.217 62.8 19.217 L 65.3 19.217 C 70.4 19.217 73.4 16.717 74.2 11.817 C 74.5 9.717 74.2 8.017 73.2 6.817 C 72 5.617 70.1 4.917 67.5 4.917 Z M 68.4 12.217 C 68 15.017 65.8 15.017 63.8 15.017 L 62.6 15.017 L 63.4 9.817 C 63.4 9.517 63.7 9.317 64 9.317 L 64.5 9.317 C 65.9 9.317 67.2 9.317 67.9 10.117 C 68.4 10.517 68.5 11.217 68.4 12.217 Z"></path><path fill="#009cde" d="M 90.7 12.117 L 87 12.117 C 86.7 12.117 86.4 12.317 86.4 12.617 L 86.2 13.617 L 85.9 13.217 C 85.1 12.017 83.3 11.617 81.5 11.617 C 77.4 11.617 73.9 14.717 73.2 19.117 C 72.8 21.317 73.3 23.417 74.6 24.817 C 75.7 26.117 77.4 26.717 79.3 26.717 C 82.6 26.717 84.5 24.617 84.5 24.617 L 84.3 25.617 C 84.2 26.017 84.5 26.417 84.9 26.417 L 88.3 26.417 C 88.8 26.417 89.3 26.017 89.4 25.517 L 91.4 12.717 C 91.4 12.517 91.1 12.117 90.7 12.117 Z M 85.5 19.317 C 85.1 21.417 83.5 22.917 81.3 22.917 C 80.2 22.917 79.4 22.617 78.8 21.917 C 78.2 21.217 78 20.317 78.2 19.317 C 78.5 17.217 80.3 15.717 82.4 15.717 C 83.5 15.717 84.3 16.117 84.9 16.717 C 85.5 17.417 85.7 18.317 85.5 19.317 Z"></path><path fill="#009cde" d="M 95.1 5.417 L 91.9 25.717 C 91.8 26.117 92.1 26.417 92.5 26.417 L 95.7 26.417 C 96.2 26.417 96.7 26.017 96.8 25.517 L 100 5.617 C 100.1 5.217 99.8 4.917 99.4 4.917 L 95.8 4.917 C 95.4 4.917 95.2 5.117 95.1 5.417 Z"></path></svg></button>        <% } else { %>            <p class="minicart-empty-text"><%= config.strings.empty %></p>        <% } %>    </div>    <input type="hidden" name="cmd" value="_cart" />    <input type="hidden" name="upload" value="1" />    <% for (var key in settings) { %>        <input type="hidden" name="<%= key %>" value="<%= settings[key] %>" />    <% } %></form>',
+   strings: {
+      button: 'Check Out with ',
+      header: 'Your Order',
+      terms: 'I have read and agree to the Terms & Conditions',
+      subtotal: 'Total:',
+      discount: 'Discount:',
+      empty: 'Your shopping cart is empty'}
+   });
+   paypal.minicart.view.bindForms();
+   $('#PayPalShoppingCart1').click(function(e)
+   {
+      e.stopPropagation();
+      paypal.minicart.view.show();
+      paypal.minicart.view.redraw();
+   });
+   function updatePayPalCart(product)
+   {
+      var total = 0;
+      var cartItems = paypal.minicart.cart.items();
+      var weight, quantity, totalWeight = 0;
+      var shippingBaseFee = 4.0;
+      var shippingFeePerUnit = 2.0;
+      var shippingTitle = "Shipping and Handling";
+      var shippingDescription = "Shipped with DHL Express";
+      var i;
+      if (product !== undefined && product.get('item_name') == shippingTitle)
+      {
+         return 0;
+      }
+      for (i=0; i<cartItems.length; i++)
+      {
+         if (cartItems[i].get('item_name') == shippingTitle) 
+         {
+            paypal.minicart.cart.remove(i);
+         }
+      }
+      $('#PPMiniCart').removeClass('has-shipping');
+      cartItems.forEach(function(item) 
+      {
+         total += item._data.quantity;
+      });
+      $('#PayPalShoppingCart1-badge').text(total);
+      if (total > 0)
+      {
+         $('#PayPalShoppingCart1-badge').show();
+      }
+      else
+      {
+         $('#PayPalShoppingCart1-badge').hide();
+      }
+      for (i = 0; i < cartItems.length; i++)
+      {
+         quantity = parseFloat(cartItems[i].get('quantity'));
+         weight = parseFloat(cartItems[i].get('shipping_weight'));
+         totalWeight += (quantity * weight);
+      }
+      var shippingCosts = shippingBaseFee + totalWeight * shippingFeePerUnit;
+      if (totalWeight <= 0) 
+      {
+         shippingCosts = 0.00;
+      }
+      else
+      {
+         shippingCosts = shippingCosts.toFixed(2);
+      }
+      if (shippingCosts != 0.00)
+      {
+         var shippingItem = {
+            "amount": shippingCosts,
+            "item_name": shippingTitle,
+            "item_number": shippingDescription
+         };
+         var isShowing = paypal.minicart.view.isShowing;
+         paypal.minicart.view.isShowing = true;
+         paypal.minicart.cart.add(shippingItem);
+         paypal.minicart.view.isShowing = isShowing;
+         $('#PPMiniCart').addClass('has-shipping');
+      }
+   }
+   updatePayPalCart();
+   paypal.minicart.cart.on('add', function(idx, product, isExisting)
+   {
+      updatePayPalCart(product);
+   });
+   paypal.minicart.cart.on('remove', function(idx, product)
+   {
+      updatePayPalCart(product);
+   });
+   paypal.minicart.cart.on('change', function()
+   {
+      updatePayPalCart();
+   });
+   $("#quantity").change(function()
+   {
+      $('#amount').val('$' + (Number($('#quantity').val())*39.99).toFixed(2));
+   });
+   $("#quantity").trigger('change');
+   searchParseURL('SiteSearch1');
+   $('body').on('click','[data-ecommerce-platform="paypal"]', function(e)
+   {
+      e.preventDefault();
+      e.stopPropagation();
+      paypal.minicart.cart.add(
+      {
+         amount: $(this).attr('data-amount'),
+         business: $(this).attr('data-business'),
+         currency_code: $(this).attr('data-currency-code'),
+         item_name: $(this).attr('data-item-name'),
+         item_number: $(this).attr('data-item-number'),
+         shipping: $(this).attr('data-shipping'),
+         shipping2: $(this).attr('data-shipping2'),
+         handling_cart: $(this).attr('data-handling'),
+         no_shipping: $(this).attr('data-no_shipping'),
+         quantity: $(this).attr('data-quantity') ? $(this).attr('data-quantity') : 1,
+         shipping_weight: $(this).attr('data-weight'),
+         return: $(this).attr('data-success-url'),
+         cancel_return: $(this).attr('data-cancel-url')
+      });
+   });
+});
+</script>
+</head>
+<body>
+<div id="wb_headerLayoutGrid">
+<div id="headerLayoutGrid">
+<div class="col-1">
+<div id="wb_Heading1" style="display:block;width:100%;z-index:0;">
+<h1 id="Heading1">ZOOM TECH<br></h1>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_headerBreadcrumb" style="display:block;width:100%;z-index:1;vertical-align:top;">
+<ul id="headerBreadcrumb">
+<li><a href="" title="Visit time"><i class="fa fa-clock-o"></i>Visit time: Mon-Sat 9:00 AM -7:00 PM</a></li>
+<li><a href=""><i class="fa fa-phone"></i>Call us now: +254712283827</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-3">
+<div id="wb_PayPalShoppingCart1" style="display:inline-block;width:27px;height:41px;text-align:center;z-index:2;">
+<svg id="PayPalShoppingCart1" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M459 714 C474 729, 492 737, 511 737 C531 737, 548 729, 563 714 C579 698, 587 681, 587 662 C587 641, 579 624, 563 608 C548 593, 530 585, 511 585 C492 585, 475 593, 459 608 C444 623, 437 641, 437 662 C437 681, 444 699, 459 714 Z M395 395 L629 395 L511 227Z  M739 395 L937 395 C952 395, 965 400, 976 410 C987 420, 993 433, 993 449 C979 500, 959 575, 932 673 C905 771, 888 833, 882 859 C868 904, 837 927, 790 927 L233 927 C185 927, 154 904, 141 859 L33 463 C31 459, 31 454, 31 447 C31 432, 36 420, 47 410 C57 400, 70 395, 85 395 L283 395 L466 120 C476 105, 490 97, 511 97 C534 97, 548 105, 557 120"/>
+</svg>
+
+<span id="PayPalShoppingCart1-badge">0</span>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_navigationLayoutGrid">
+<div id="navigationLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_navigationMenu" style="display:block;width:100%;z-index:3;vertical-align:top;">
+<ul id="navigationMenu">
+<li class="active" aria-current="page">Home</li>
+<li><a href="#trendingLayoutGrid1">Shop</a></li>
+<li><a href="./TOOLS-ACTIVATION.html">Tools Activation</a></li>
+<li><a href="#" title="Shopping Cart"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+<li><a href="#contactLayoutGrid">Contact</a></li>
+</ul>
+
+</div>
+<input type="button" id="Button2" onclick="searchPage();return false;" name="Search" value="Search" style="display:inline-block;width:96px;height:25px;z-index:4;">
+</div>
+</div>
+</div>
+</div>
+<div id="wb_trendingLayoutGrid1">
+<div id="trendingLayoutGrid1">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_trendingText1">
+<span style="color:#000000;font-family:Arial;font-size:27px;"><strong>Trending today</strong></span>
+</div>
+<div id="wb_trendingText2">
+<span style="color:#808080;font-family:Arial;font-size:13px;">All our products undergo thorough testing and quality checks before being dispatched to ensure they meet the highest standards of performance and reliability. We are committed to delivering only fully functional and verified items, giving our customers confidence and peace of mind with every purchase.</span>
+</div>
+<form name="SiteSearch1_form" id="SiteSearch1_form" role="search" accept-charset="UTF-8" onsubmit="return searchPage(features)"></form>
+<input type="text" id="SiteSearch1" style="display:block;width: 100%;height:26px;z-index:7;" name="SiteSearch1" value="" spellcheck="false" placeholder="Search this website" role="searchbox" form="SiteSearch1_form">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_trendingLayoutGrid2">
+<div id="trendingLayoutGrid2">
+<div class="row">
+<div class="col-1">
+<div id="wb_Card35" style="display:flex;width:100%;z-index:8;" class="card">
+<div id="Card35-card-body">
+<img id="Card35-card-item0" src="images.jpeg" width="240" height="210" alt="Macbook Pro" title="Macbook Pro">
+<div id="Card35-card-item1">HOT AIR MACHINE</div>
+<div id="Card35-card-item2">$39.95</div>
+<div id="Card35-card-item3">$49.95</div>
+<hr id="Card35-card-item4">
+<div id="Card35-card-item5"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card35-card-item6"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card35-card-item7"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card35-card-item8"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card35-card-item9"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star-o"></i></a></div>
+<hr id="Card35-card-item10">
+<div id="Card35-card-item11" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Product 0001" data-item-number="SKU0001" data-amount="39.99" data-currency-code="USD" data-success-url="http://www.yourwebsite.com/" data-cancel-url="http://www.yourwebsite.com/" data-cmd="_cart" data-no_shipping="0" data-weight="2"><a href="./INDEX.html">ADD TO CART</a></div>
+<div id="Card35-card-item12" onclick="$('#product1Dialog').modal('show');return false;"><a href="./INDEX.html">QUICK VIEW</a></div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_Card2" style="display:flex;width:100%;z-index:9;" class="card">
+<div id="Card2-card-body">
+<img id="Card2-card-item0" src="images/Self_Drilling_Screw_with_rubber_gasket.jpg" width="1000" height="764" alt="Macbook Pro" title="Macbook Pro">
+<div id="Card2-card-item1">SCREWS</div>
+<div id="Card2-card-item2">$20</div>
+<div id="Card2-card-item3">$100</div>
+<hr id="Card2-card-item4">
+<div id="Card2-card-item5"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card2-card-item6"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card2-card-item7"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card2-card-item8"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card2-card-item9"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star-o"></i></a></div>
+<hr id="Card2-card-item10">
+<div id="Card2-card-item11" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Product 0001" data-item-number="SKU0001" data-amount="39.99" data-currency-code="USD" data-success-url="http://www.yourwebsite.com/" data-cancel-url="http://www.yourwebsite.com/" data-cmd="_cart" data-no_shipping="0" data-weight="2"><a href="./INDEX.html">ADD TO CART</a></div>
+<div id="Card2-card-item12" onclick="$('#product1Dialog').modal('show');return false;"><a href="./INDEX.html">QUICK VIEW</a></div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_Card1" style="display:flex;width:100%;z-index:10;" class="card">
+<div id="Card1-card-body">
+<img id="Card1-card-item0" src="images/iPhone-11-Housing-Service.jpg" width="500" height="500" alt="Macbook Pro" title="Macbook Pro">
+<div id="Card1-card-item1">IPHONE<br></div>
+<div id="Card1-card-item2">$39.95</div>
+<div id="Card1-card-item3">$49.95</div>
+<hr id="Card1-card-item4">
+<div id="Card1-card-item5"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card1-card-item6"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card1-card-item7"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card1-card-item8"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card1-card-item9"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star-o"></i></a></div>
+<hr id="Card1-card-item10">
+<div id="Card1-card-item11" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Product 0001" data-item-number="SKU0001" data-amount="39.99" data-currency-code="USD" data-success-url="http://www.yourwebsite.com/" data-cancel-url="http://www.yourwebsite.com/" data-cmd="_cart" data-no_shipping="0" data-weight="2"><a href="./INDEX.html">ADD TO CART</a></div>
+<div id="Card1-card-item12" onclick="$('#product1Dialog').modal('show');return false;"><a href="./INDEX.html">QUICK VIEW</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid3">
+<div id="LayoutGrid3">
+<div class="row">
+<div class="col-1">
+<div id="wb_Image1" style="display:block;width:100%;height:auto;z-index:11;">
+<img src="images/wine18.png" id="Image1" alt="">
+</div>
+<div id="wb_Heading4" style="display:block;width:100%;z-index:12;">
+<h2 id="Heading4">ORDER WITH US </h2>
+</div>
+<div id="wb_Text6">
+<span style="color:#000000;font-family:;font-size:16px;line-height:25px;">✅</span><span style="color:#000000;font-family:Calibri;font-size:16px;line-height:25px;"> Fast &amp; Reliable Processing<br>✅ Nationwide Delivery<br></span><span style="color:#000000;font-family:'Segoe UI Emoji';font-size:16px;line-height:26px;">📦</span><span style="color:#000000;font-family:Calibri;font-size:16px;line-height:26px;"> Place your order today and receive it within 24 hours – no delays, <br><br></span><span style="color:#000000;font-family:'Segoe UI Emoji';font-size:16px;line-height:16px;">💬</span><span style="color:#000000;font-family:Calibri;font-size:16px;line-height:16px;"> Call / WhatsApp: +254 712283827</span>
+</div>
+<a id="Button1" href="#categoriesLayoutGrid1" target="_blank" style="display:inline-block;width:137px;height:46px;z-index:14;">SHOP NOW</a>
+</div>
+<div class="col-2">
+<div id="wb_Heading5" style="display:block;width:100%;z-index:15;">
+<h2 id="Heading5">REFUNDS </h2>
+</div>
+<div id="wb_Text1">
+<span style="color:#000000;font-family:;font-size:16px;">All refunds are processed within one week from the date of return, provided the product seal has not been broken or tampered with. To qualify for a return, items must be in their original condition and packaging, with all accessories intact. Returns that meet these conditions will be reviewed and resolved promptly within the stated period.<strong>THANK YOU </strong></span>
+</div>
+<a id="Button4" href="./REFUNDS.html" target="_blank" style="display:inline-block;width:195px;height:46px;z-index:17;">PROCESS REFUND</a>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_trendingLayoutGrid3">
+<div id="trendingLayoutGrid3">
+<div class="row">
+<div class="col-1">
+<div id="wb_Card4" style="display:flex;width:100%;z-index:18;" class="card">
+<div id="Card4-card-body">
+<img id="Card4-card-item0" src="images/iPhone-11-Housing-Service.jpg" width="500" height="500" alt="Macbook Pro" title="Macbook Pro">
+<div id="Card4-card-item1">IPHONE<br></div>
+<div id="Card4-card-item2">$39.95</div>
+<div id="Card4-card-item3">$49.95</div>
+<hr id="Card4-card-item4">
+<div id="Card4-card-item5"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card4-card-item6"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card4-card-item7"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card4-card-item8"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card4-card-item9"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star-o"></i></a></div>
+<hr id="Card4-card-item10">
+<div id="Card4-card-item11" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Product 0001" data-item-number="SKU0001" data-amount="39.99" data-currency-code="USD" data-success-url="http://www.yourwebsite.com/" data-cancel-url="http://www.yourwebsite.com/" data-cmd="_cart" data-no_shipping="0" data-weight="2"><a href="./INDEX.html">ADD TO CART</a></div>
+<div id="Card4-card-item12" onclick="$('#product1Dialog').modal('show');return false;"><a href="./INDEX.html">QUICK VIEW</a></div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_Card12" style="display:flex;width:100%;z-index:19;" class="card">
+<div id="Card12-card-body">
+<img id="Card12-card-item0" src="images/iPhone-11-Housing-Service.jpg" width="500" height="500" alt="Macbook Pro" title="Macbook Pro">
+<div id="Card12-card-item1">IPHONE<br></div>
+<div id="Card12-card-item2">$39.95</div>
+<div id="Card12-card-item3">$49.95</div>
+<hr id="Card12-card-item4">
+<div id="Card12-card-item5"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card12-card-item6"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card12-card-item7"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card12-card-item8"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card12-card-item9"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star-o"></i></a></div>
+<hr id="Card12-card-item10">
+<div id="Card12-card-item11" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Product 0001" data-item-number="SKU0001" data-amount="39.99" data-currency-code="USD" data-success-url="http://www.yourwebsite.com/" data-cancel-url="http://www.yourwebsite.com/" data-cmd="_cart" data-no_shipping="0" data-weight="2"><a href="./INDEX.html">ADD TO CART</a></div>
+<div id="Card12-card-item12" onclick="$('#product1Dialog').modal('show');return false;"><a href="./INDEX.html">QUICK VIEW</a></div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_Card5" style="display:flex;width:100%;z-index:20;" class="card">
+<div id="Card5-card-body">
+<img id="Card5-card-item0" src="images/iPhone-11-Housing-Service.jpg" width="500" height="500" alt="Macbook Pro" title="Macbook Pro">
+<div id="Card5-card-item1">IPHONE<br></div>
+<div id="Card5-card-item2">$39.95</div>
+<div id="Card5-card-item3">$49.95</div>
+<hr id="Card5-card-item4">
+<div id="Card5-card-item5"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card5-card-item6"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card5-card-item7"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card5-card-item8"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card5-card-item9"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star-o"></i></a></div>
+<hr id="Card5-card-item10">
+<div id="Card5-card-item11" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Product 0001" data-item-number="SKU0001" data-amount="39.99" data-currency-code="USD" data-success-url="http://www.yourwebsite.com/" data-cancel-url="http://www.yourwebsite.com/" data-cmd="_cart" data-no_shipping="0" data-weight="2"><a href="./INDEX.html">ADD TO CART</a></div>
+<div id="Card5-card-item12" onclick="$('#product1Dialog').modal('show');return false;"><a href="./INDEX.html">QUICK VIEW</a></div>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div id="wb_Card7" style="display:flex;width:100%;z-index:21;" class="card">
+<div id="Card7-card-body">
+<img id="Card7-card-item0" src="images/iPhone-11-Housing-Service.jpg" width="500" height="500" alt="Macbook Pro" title="Macbook Pro">
+<div id="Card7-card-item1">IPHONE<br></div>
+<div id="Card7-card-item2">$39.95</div>
+<div id="Card7-card-item3">$49.95</div>
+<hr id="Card7-card-item4">
+<div id="Card7-card-item5"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card7-card-item6"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card7-card-item7"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card7-card-item8"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star"></i></a></div>
+<div id="Card7-card-item9"><a href="http://www.wysiwygwebbuilder.com/purchase.html"><i class="fa fa-star-o"></i></a></div>
+<hr id="Card7-card-item10">
+<div id="Card7-card-item11" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Product 0001" data-item-number="SKU0001" data-amount="39.99" data-currency-code="USD" data-success-url="http://www.yourwebsite.com/" data-cancel-url="http://www.yourwebsite.com/" data-cmd="_cart" data-no_shipping="0" data-weight="2"><a href="./INDEX.html">ADD TO CART</a></div>
+<div id="Card7-card-item12" onclick="$('#product1Dialog').modal('show');return false;"><a href="./INDEX.html">QUICK VIEW</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_categoriesLayoutGrid1">
+<div id="categoriesLayoutGrid1">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_categoriesText1">
+<span style="color:#FFFFFF;font-family:Arial;font-size:27px;"><strong>Latest products</strong></span>
+</div>
+<div id="wb_categoriesText2">
+<span style="color:#808080;font-family:Arial;font-size:13px;">The best selection of whisky, vodka and liqueur</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_categoriesLayoutGrid2">
+<div id="categoriesLayoutGrid2">
+<div class="col-1">
+<div id="wb_categoriesImage2" style="display:block;width:100%;height:auto;z-index:24;">
+<a href="#trendingLayoutGrid2"><img src="images/beer132.jpg" id="categoriesImage2" alt=""></a><div id="categoriesImage2-overlay">LImited Edition</div>
+</div>
+<div id="wb_responsive-spacer" style="display:block;width:100%;z-index:25;position:relative;">
+<svg id="responsive-spacer" height="100%" width="100%" style="position:absolute;height:100%;width:100%;left:0;top:0;overflow:visible;" viewBox="0 0 303 19" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+   <path id="responsive-spacer-shape" d="M0 0 L303 0 L303 19 L0 19Z " vector-effect="non-scaling-stroke" />
+</defs>
+<clipPath id="responsive-spacer-clippath">
+   <use xlink:href="#responsive-spacer-shape"/>
+</clipPath>
+<use xlink:href="#responsive-spacer-shape" data-href="#responsive-spacer-shape" clip-path="url(#responsive-spacer-clippath)" style="fill:#000000;stroke:#0963AD;stroke-width:0"/>
+</svg>
+
+</div>
+<div id="wb_categoriesImage3" style="display:block;width:100%;height:auto;z-index:26;">
+<a href="#trendingLayoutGrid2"><img src="images/beer150.jpg" id="categoriesImage3" alt=""></a><div id="categoriesImage3-overlay">Beer from Germany</div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_categoriesImage1" style="display:block;width:100%;height:auto;z-index:27;">
+<a href="#trendingLayoutGrid2"><img src="images/beer125.jpg" id="categoriesImage1" alt=""></a><div id="categoriesImage1-overlay">Irish Beer</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_categoriesImage4" style="display:block;width:100%;height:auto;z-index:28;">
+<a href="#trendingLayoutGrid2"><img src="images/beer153.jpg" id="categoriesImage4" alt=""></a><div id="categoriesImage4-overlay">3-pack Beer</div>
+</div>
+<div id="wb_Shape2" style="display:block;width:100%;z-index:29;position:relative;">
+<svg id="Shape2" height="100%" width="100%" style="position:absolute;height:100%;width:100%;left:0;top:0;overflow:visible;" viewBox="0 0 303 19" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+   <path id="Shape2-shape" d="M0 0 L303 0 L303 19 L0 19Z " vector-effect="non-scaling-stroke" />
+</defs>
+<clipPath id="Shape2-clippath">
+   <use xlink:href="#Shape2-shape"/>
+</clipPath>
+<use xlink:href="#Shape2-shape" data-href="#Shape2-shape" clip-path="url(#Shape2-clippath)" style="fill:#000000;stroke:#0963AD;stroke-width:0"/>
+</svg>
+
+</div>
+<div id="wb_categoriesImage5" style="display:block;width:100%;height:auto;z-index:30;">
+<a href="#trendingLayoutGrid2"><img src="images/beer154.jpg" id="categoriesImage5" alt=""></a><div id="categoriesImage5-overlay">Belgium Beer</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_serviceLayoutGrid">
+<div id="serviceLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_serviceCard2" style="display:inline-block;width:203px;height:67px;z-index:31;" class="card">
+<div id="serviceCard2-card-body">
+<div id="serviceCard2-card-item0"><a href="http://"><i class="fa fa-phone"></i></a></div>
+<div id="serviceCard2-card-item1"><a href="http://">Contact us 24/7</a></div>
+<div id="serviceCard2-card-item2"><a href="http://">Lorem ipsum dolor</a></div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_serviceCard3" style="display:inline-block;width:209px;height:67px;z-index:32;" class="card">
+<div id="serviceCard3-card-body">
+<div id="serviceCard3-card-item0"><a href="http://"><i class="fa fa-sign-out"></i></a></div>
+<div id="serviceCard3-card-item1"><a href="http://">30 Days Return</a></div>
+<div id="serviceCard3-card-item2"><a href="http://">Lorem ipsum dolor</a></div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_serviceCard4" style="display:inline-block;width:209px;height:67px;z-index:33;" class="card">
+<div id="serviceCard4-card-body">
+<div id="serviceCard4-card-item0"><a href="http://"><i class="fa fa-lock"></i></a></div>
+<div id="serviceCard4-card-item1"><a href="http://">Secure Payments</a></div>
+<div id="serviceCard4-card-item2"><a href="http://">Lorem ipsum dolor</a></div>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div id="wb_serviceCard1" style="display:inline-block;width:212px;height:67px;z-index:34;" class="card">
+<div id="serviceCard1-card-body">
+<div id="serviceCard1-card-item0"><a href="http://"><i class="fa fa-truck"></i></a></div>
+<div id="serviceCard1-card-item1"><a href="http://">Free shipping</a></div>
+<div id="serviceCard1-card-item2"><a href="http://">Lorem ipsum dolor</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_links">
+<div id="links-overlay"></div>
+<div id="links">
+<div class="row">
+<div class="col-1">
+<div id="wb_linksText1">
+<span style="color:#FFFFFF;"><strong>CUSTOMER SERVICES</strong></span>
+</div>
+<div id="wb_linksMenu1" style="display:block;width:100%;z-index:36;">
+<ul id="linksMenu1" role="menubar" class="nav">
+<li role="menuitem" class="nav-item firstmain"><a class="nav-link" href="./HELP-AND-CONTACTS.html" target="_self">Help&nbsp;&amp;&nbsp;Contact&nbsp;Us</a>
+</li>
+<li role="menuitem" class="nav-item"><a class="nav-link" href="./REFUNDS.html" target="_self">Returns&nbsp;&amp;&nbsp;Refunds</a>
+</li>
+<li role="menuitem" class="nav-item"><a class="nav-link" href="" target="_self">Online&nbsp;Stores</a>
+</li>
+<li role="menuitem" class="nav-item"><a class="nav-link" href="./TERMS-AND-CONDITIONS.html" target="_self">Terms&nbsp;&amp;&nbsp;Conditions</a>
+</li>
+</ul>
+
+</div>
+</div>
+<div class="col-2">
+<div id="wb_linksText2">
+<span style="color:#FFFFFF;"><strong>COMPANY</strong></span>
+</div>
+<div id="wb_linksMenu2" style="display:block;width:100%;z-index:38;">
+<ul id="linksMenu2" role="menubar" class="nav">
+<li role="menuitem" class="nav-item firstmain"><a class="nav-link" href="./SERVICES.html" target="_blank">What&nbsp;We&nbsp;Do</a>
+</li>
+<li role="menuitem" class="nav-item"><a class="nav-link" href="./SERVICES.html" target="_blank">Services</a>
+</li>
+<li role="menuitem" class="nav-item"><a class="nav-link" href="./INDEX.html" target="_blank">Support</a>
+</li>
+<li role="menuitem" class="nav-item"><a class="nav-link" href="./PRIVACY-POLICY.html" target="_blank">Privacy&nbsp;Policy</a>
+</li>
+</ul>
+
+</div>
+</div>
+<div class="col-3">
+<div id="wb_linksText3">
+<span style="color:#FFFFFF;"><strong>SOCIAL MEDIA</strong></span>
+</div>
+<div id="wb_linksMenu3" style="display:block;width:100%;z-index:40;">
+<ul id="linksMenu3" role="menubar" class="nav">
+<li role="menuitem" class="nav-item firstmain"><a class="nav-link" href="https://www.facebook.com/wysiwygwb" rel="noreferrer" target="_blank" title="Facebook">Facebook</a>
+</li>
+<li role="menuitem" class="nav-item"><a class="nav-link" href="https://www.wysiwygwebbuilder.com/forum/app.php/feed?mode=news" target="_self">RSS</a>
+</li>
+<li role="menuitem" class="nav-item"><a class="nav-link" href="https://twitter.com/wysiwyg_wb" rel="noreferrer" target="_blank" title="Twitter">Twitter</a>
+</li>
+<li role="menuitem" class="nav-item"><a class="nav-link" href="https://www.youtube.com/channel/UCu3yYRA9WyiFBZEZiAM0bkA" rel="noreferrer" target="_blank" title="YouTube">YouTube</a>
+</li>
+</ul>
+
+</div>
+<div id="wb_Icon1" style="display:inline-block;width:20px;height:20px;text-align:center;z-index:41;">
+<div id="Icon1"><i class="fa fa-facebook"></i></div>
+</div>
+<div id="wb_Icon2" style="display:inline-block;width:20px;height:20px;text-align:center;z-index:42;">
+<div id="Icon2"><i class="fa fa-twitter"></i></div>
+</div>
+<div id="wb_Icon3" style="display:inline-block;width:20px;height:20px;text-align:center;z-index:43;">
+<div id="Icon3"><i class="fa fa-instagram"></i></div>
+</div>
+<div id="wb_Icon4" style="display:inline-block;width:20px;height:20px;text-align:center;z-index:44;">
+<div id="Icon4"><i class="fa fa-github"></i></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="product1Dialog" class="modal fade" role="dialog">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+<h4 class="modal-title">Quick View</h4>
+</div>
+<div class="modal-body">
+<div id="wb_product1Heading" style="position:absolute;left:26px;top:21px;width:588px;height:37px;z-index:46;">
+<h2 id="product1Heading">Product Name</h2></div>
+<div id="wb_product1Text" style="position:absolute;left:278px;top:80px;width:364px;height:74px;z-index:47;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">What is the difference between a liquor and a liqueur?<br>Alcohol content: Both liqueurs and liquors have a range of alcohol content. Most liquor is in the 40 to 55 percent range of Alcohol by Volume. Liqueurs typically contain more ingredients, so the alcohol content is generally lower.</span></div>
+<form action="https://www.paypal.com/cgi-bin/webscr" id="PayPal2_form" method="post" style="margin:0;padding:0;" target="PayPal">
+<input type="hidden" name="business" value="orders@pablosoftwaresolutions.com">
+<input type="hidden" name="cmd" value="_cart">
+<input type="hidden" name="add" value="1">
+<input type="hidden" name="item_name" value="Product 0001">
+<input type="hidden" name="item_number" value="SKU0001">
+<input type="hidden" name="amount" value="39.99">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="return" value="">
+<input type="hidden" name="cancel_return" value="">
+<input type="hidden" name="receiver_email" value="orders@pablosoftwaresolutions.com">
+<input type="hidden" name="no_shipping" value="0">
+<input type="hidden" name="shipping_weight" value="2">
+<div id="wb_quantity" style="position:absolute;left:279px;top:174px;width:118px;height:30px;text-align:center;">
+<div class="input-group">
+<span class="input-group-btn">
+<button class="btn btn-default" data-dir="down" title="Spinner Down" type="button">&#8722;</button>
+</span>
+<input type="text" id="quantity" name="quantity" value="1" autocomplete="off" title="Quantity">
+<span class="input-group-btn">
+<button class="btn btn-default" data-dir="up" title="Spinner Up" type="button">+</button>
+</span>
+</div></div>
+<input id="PayPal2" type="image" name="submit" src="images/buy-logo-medium.png" style="position:absolute;left:278px;top:282px;z-index:48;" alt="Make payments with PayPal, it's fast, free, and secure!">
+</form>
+<input type="text" id="amount" style="position:absolute;left:335px;top:230px;width:88px;height:16px;z-index:49;" name="amount" value="$39.99" spellcheck="false">
+<label for="headerBreadcrumb" id="Label1" style="position:absolute;left:278px;top:229px;width:45px;height:16px;line-height:16px;z-index:50;">Total:</label>
+<div id="wb_Shape1" style="position:absolute;left:26px;top:80px;width:236px;height:236px;z-index:51;">
+<div id="Shape1"><div id="Shape1_text"><div><span style="color:#F5F5F5;font-family:Arial;font-size:13px;">Your Image Goes Here</span></div></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGridLogo">
+<div id="LayoutGridLogo">
+<div class="col-1">
+<div id="wb_Image3" style="display:inline-block;width:200px;height:113px;z-index:53;">
+<img src="images/ZOOM.png" id="Image3" alt="" width="200" height="113">
+</div>
+<div id="wb_Text2">
+<span style="color:#FFFFFF;">Copyright © 2025. ZOOM TECH&nbsp; </span>
+</div>
+</div>
+</div>
+</div>
+<script src="minicart.min.js"></script>
+</body>
+</html>

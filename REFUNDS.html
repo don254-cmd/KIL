@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refund Request Form - Zoom Tech</title>
+  </head>
+<body>
+  <div class="container">
+    <h2>Refund Request Form</h2>
+
+    <form>
+      <div class="section-title">Customer Information</div>
+      <label>Full Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Phone Number:</label>
+      <input type="tel" name="phone" required>
+
+      <label>Email Address (if available):</label>
+      <input type="email" name="email">
+
+      <label>Date of Purchase:</label>
+      <input type="date" name="purchase_date">
+
+      <label>Order/Receipt Number:</label>
+      <input type="text" name="receipt_number">
+
+      <div class="section-title">Product Information</div>
+      <label>Product Name:</label>
+      <input type="text" name="product_name">
+
+      <label>Quantity:</label>
+      <input type="text" name="quantity">
+
+      <label>Purchase Price (KES):</label>
+      <input type="text" name="price">
+
+      <label>Reason for Refund Request:</label>
+      <select name="reason">
+        <option value="">--Select Reason--</option>
+        <option value="defective">Defective Item</option>
+        <option value="wrong">Wrong Item Delivered</option>
+        <option value="not_as_described">Item Not as Described</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label>If other, explain:</label>
+      <textarea name="other_reason" rows="3"></textarea>
+
+      <div class="section-title">Condition of Product</div>
+      <label><input type="checkbox" name="condition" value="packaging"> Original Packaging Intact</label>
+      <label><input type="checkbox" name="condition" value="seal"> Seal Not Voided</label>
+      <label><input type="checkbox" name="condition" value="unused"> Unused Item</label>
+
+      <div class="section-title">Preferred Resolution</div>
+      <label><input type="radio" name="resolution" value="refund"> Refund to Mobile Money (Mpesa)</label>
+      <label><input type="radio" name="resolution" value="credit"> Store Credit</label>
+      <label><input type="radio" name="resolution" value="exchange"> Exchange</label>
+
+      <label>Mpesa Number (if refund selected):</label>
+      <input type="text" name="mpesa_number">
+
+      <label>Customer Signature:</label>
+      <input type="text" name="signature">
+
+      <label>Date:</label>
+      <input type="date" name="signature_date">
+
+      <button type="submit" class="submit-btn">Submit Refund Request</button>
+
+      <div class="note">
+        * Refunds are only processed for items with intact seals and within the return window. Processing time is up to 7 days.
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 20 - http://www.wysiwygwebbuilder.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&display=swap" rel="stylesheet">
+<link href="css/liquor.css" rel="stylesheet">
+<link href="css/REFUNDS.css" rel="stylesheet">
+</head>
+<body>
+<div id="wb_Heading1" style="position:absolute;left:49px;top:49px;width:151px;height:185px;z-index:0;">
+<h1 id="Heading1">FILL UP YOUR REFUND FORM</h1></div>
+</body>
+</html>
